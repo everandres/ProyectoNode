@@ -12,7 +12,7 @@ app.use('/api/v1/precipitaciones', precipitacion);
 const start = async () => {
     try {
       await conexion(process.env.MONGO_URI);
-      app.listen(8000, () =>
+      app.listen(process.env.PORT || 8000, () =>
         console.log(`Server is listening on port 8000...`)
       );
     } catch (error) {
